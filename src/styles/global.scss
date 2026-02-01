@@ -1,0 +1,124 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Content", system-ui, sans-serif;
+  font-weight: 400;
+  color: $text-primary;
+  background: $background;
+  background-image: linear-gradient(rgba(48, 47, 43, 0.95), rgba(48, 47, 43, 0.95)), url(../img/bg.avif);
+  background-size: cover;
+  background-attachment: fixed;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1725px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  @media (min-width: $tablet) {
+    padding: 0 40px;
+  }
+
+  @media (min-width: $desktop) {
+    padding: 0 97px;
+  }
+}
+
+.section-title {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: $spacing-xl;
+  color: $text-primary;
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+
+  @media (max-width: $mobile) {
+    font-size: 32px;
+    margin-bottom: $spacing-lg;
+  }
+}
+
+.code-symbol {
+  color: $code-green;
+}
+
+.code-string {
+  color: $code-orange;
+}
+
+.code-keyword {
+  color: $code-purple;
+}
+
+.code-variable {
+  color: $code-blue;
+}
+
+.code-property {
+  color: $code-green;
+}
+
+.code-number {
+  color: $code-orange;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 32px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+
+  &--primary {
+    background: $accent;
+    color: $text-primary;
+    border-color: $accent;
+
+    &:hover {
+      background: $accent-hover;
+      border-color: $accent-hover;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(74, 158, 255, 0.3);
+    }
+  }
+
+  &--secondary {
+    background: transparent;
+    color: $text-primary;
+    border-color: $border-color;
+
+    &:hover {
+      border-color: $accent;
+      color: $accent;
+      transform: translateY(-2px);
+    }
+  }
+}

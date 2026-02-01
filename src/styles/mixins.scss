@@ -1,0 +1,39 @@
+@use 'sass:math';
+
+@mixin fluid-text($max: 48, $min: 16, $maxViewportWidth: 1920, $minViewportWidth: 320) {
+  $maxSize: math.div($max, 16);
+  $minSize: math.div($min, 16);
+  $maxWidth: math.div($maxViewportWidth, 16);
+  $minWidth: math.div($minViewportWidth, 16);
+
+  $slope: math.div(($maxSize - $minSize), ($maxWidth - $minWidth));
+  $yAxisIntersection: -$minWidth * $slope + $minSize;
+
+  font-size: clamp(
+    #{$minSize * 1rem},
+    #{$yAxisIntersection * 1rem} + #{$slope * 100vw},
+    #{$maxSize * 1rem}
+  );
+}
+
+@mixin main-text {
+  font-family: 'Regular', sans-serif;
+  font-weight: 400;
+  @include fluid-text(16, 14, 1920, 744);
+  line-height: 20px;
+
+  @media screen and (max-width: 744px) {
+    line-height: 16px;
+  }
+}
+
+@mixin h1-title {
+  font-family: 'Medium', sans-serif;
+  font-weight: 500;
+  @include fluid-text(32, 20, 1920, 744);
+  line-height: 40px;
+
+  @media screen and (max-width: 744px) {
+    line-height: 24px;
+  }
+}

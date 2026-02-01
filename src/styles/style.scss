@@ -1,0 +1,477 @@
+@import 'variables';
+@import 'mixins';
+@import 'fonts';
+@import 'global';
+@import 'header';
+
+// Hero Section
+.hero {
+  padding: $spacing-xxl 0;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+
+  @media (max-width: $mobile) {
+    padding: $spacing-xl 0;
+    min-height: auto;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-xl;
+    align-items: center;
+
+    @media (max-width: $tablet) {
+      grid-template-columns: 1fr;
+      gap: $spacing-lg;
+    }
+  }
+
+  &__text {
+    animation: fadeInUp 0.8s ease;
+  }
+
+  &__greeting {
+    font-size: 20px;
+    color: $code-green;
+    margin-bottom: $spacing-sm;
+    font-weight: 400;
+  }
+
+  &__name {
+    font-size: 56px;
+    font-weight: 700;
+    margin-bottom: $spacing-md;
+    line-height: 1.2;
+    color: $text-primary;
+
+    @media (max-width: $mobile) {
+      font-size: 32px;
+    }
+  }
+
+  &__title {
+    font-size: 42px;
+    color: $text-secondary;
+    margin-bottom: $spacing-lg;
+    font-weight: 400;
+
+    @media (max-width: $mobile) {
+      font-size: 24px;
+    }
+  }
+
+  &__description {
+    font-size: 18px;
+    color: $text-secondary;
+    margin-bottom: $spacing-xl;
+    line-height: 1.8;
+    max-width: 600px;
+
+    @media (max-width: $mobile) {
+      font-size: 16px;
+      margin-bottom: $spacing-lg;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    gap: $spacing-md;
+    flex-wrap: wrap;
+  }
+
+  &__code {
+    animation: fadeInRight 0.8s ease;
+  }
+}
+
+.code-block {
+  background: $background-dark;
+  border: 1px solid $border-color;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+
+  &__header {
+    display: flex;
+    gap: 8px;
+    padding: 12px 16px;
+    background: $background-light;
+    border-bottom: 1px solid $border-color;
+  }
+
+  &__dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: $text-secondary;
+
+    &:nth-child(1) {
+      background: #ff5f56;
+    }
+
+    &:nth-child(2) {
+      background: #ffbd2e;
+    }
+
+    &:nth-child(3) {
+      background: #27c93f;
+    }
+  }
+
+  &__content {
+    padding: $spacing-lg;
+    margin: 0;
+    overflow-x: auto;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.8;
+
+    @media (max-width: $mobile) {
+      font-size: 12px;
+      padding: $spacing-md;
+    }
+
+    code {
+      display: block;
+      white-space: pre;
+    }
+  }
+}
+
+// About Section
+.about {
+  padding: $spacing-xxl 0;
+  background: rgba(30, 29, 26, 0.5);
+
+  &__content {
+    max-width: 900px;
+  }
+
+  &__text {
+    font-size: 18px;
+    line-height: 1.8;
+    color: $text-secondary;
+    margin-bottom: $spacing-xl;
+
+    p {
+      margin-bottom: $spacing-md;
+    }
+  }
+
+  &__stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $spacing-lg;
+    margin-top: $spacing-xl;
+
+    @media (max-width: $mobile) {
+      grid-template-columns: 1fr;
+      gap: $spacing-md;
+    }
+  }
+}
+
+.stat {
+  text-align: center;
+  padding: $spacing-lg;
+  background: $background-light;
+  border: 1px solid $border-color;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    border-color: $accent;
+    box-shadow: 0 10px 30px rgba(74, 158, 255, 0.2);
+  }
+
+  &__number {
+    font-size: 48px;
+    font-weight: 700;
+    color: $accent;
+    margin-bottom: $spacing-sm;
+
+    @media (max-width: $mobile) {
+      font-size: 36px;
+    }
+  }
+
+  &__label {
+    font-size: 16px;
+    color: $text-secondary;
+  }
+}
+
+// Skills Section
+.skills {
+  padding: $spacing-xxl 0;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: $spacing-lg;
+
+    @media (max-width: $mobile) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.skill-card {
+  padding: $spacing-xl;
+  background: $background-light;
+  border: 1px solid $border-color;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  text-align: center;
+
+  &:hover {
+    transform: translateY(-5px);
+    border-color: $accent;
+    box-shadow: 0 10px 30px rgba(74, 158, 255, 0.2);
+  }
+
+  &__icon {
+    font-size: 48px;
+    margin-bottom: $spacing-md;
+    display: block;
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: $spacing-sm;
+    color: $text-primary;
+  }
+
+  &__description {
+    font-size: 16px;
+    color: $text-secondary;
+    line-height: 1.6;
+  }
+}
+
+// Projects Section
+.projects {
+  padding: $spacing-xxl 0;
+  background: rgba(30, 29, 26, 0.5);
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: $spacing-xl;
+
+    @media (max-width: $mobile) {
+      grid-template-columns: 1fr;
+      gap: $spacing-lg;
+    }
+  }
+}
+
+.project-card {
+  background: $background-light;
+  border: 1px solid $border-color;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+
+    .project-card__overlay {
+      opacity: 1;
+    }
+  }
+
+  &__image {
+    position: relative;
+    height: 250px;
+    background: linear-gradient(135deg, $accent 0%, $code-purple 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="%23333"/><text x="50" y="50" font-size="20" fill="%23fff" text-anchor="middle" dominant-baseline="middle">Project</text></svg>');
+      opacity: 0.1;
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $spacing-md;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &__link {
+    padding: 12px 24px;
+    background: $accent;
+    color: $text-primary;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: $accent-hover;
+      transform: scale(1.05);
+    }
+  }
+
+  &__content {
+    padding: $spacing-lg;
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: $spacing-sm;
+    color: $text-primary;
+  }
+
+  &__description {
+    font-size: 16px;
+    color: $text-secondary;
+    line-height: 1.6;
+    margin-bottom: $spacing-md;
+  }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-sm;
+  }
+}
+
+.tag {
+  padding: 6px 12px;
+  background: $background-dark;
+  border: 1px solid $border-color;
+  border-radius: 6px;
+  font-size: 14px;
+  color: $code-blue;
+}
+
+// Contacts Section
+.contacts {
+  padding: $spacing-xxl 0;
+
+  &__content {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  &__text {
+    font-size: 18px;
+    color: $text-secondary;
+    margin-bottom: $spacing-xl;
+    line-height: 1.8;
+  }
+
+  &__links {
+    display: flex;
+    justify-content: center;
+    gap: $spacing-lg;
+    flex-wrap: wrap;
+  }
+}
+
+.contact-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-sm;
+  padding: $spacing-lg;
+  background: $background-light;
+  border: 1px solid $border-color;
+  border-radius: 12px;
+  min-width: 120px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    border-color: $accent;
+    box-shadow: 0 10px 30px rgba(74, 158, 255, 0.2);
+  }
+
+  &__icon {
+    font-size: 32px;
+  }
+
+  &__text {
+    font-size: 16px;
+    color: $text-primary;
+  }
+}
+
+// Footer
+.footer {
+  padding: $spacing-lg 0;
+  border-top: 1px solid $border-color;
+  background: rgba(30, 29, 26, 0.5);
+
+  &__content {
+    text-align: center;
+  }
+
+  &__text {
+    font-size: 16px;
+    color: $text-secondary;
+  }
+
+  &__heart {
+    color: #ff5f56;
+    animation: heartbeat 1.5s ease infinite;
+  }
+}
+
+// Animations
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}

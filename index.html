@@ -1,15 +1,291 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Content:wght@400;700&display=swap" rel="stylesheet">
+    <title>Портфолио | Frontend Developer</title>
   </head>
   <body>
-    <h1>Hello world</h1>
-    <img src="public/vite.svg" alt="">
-    <div id="app"></div>
+    <header class="header">
+      <div class="wrapper">
+        <div class="header__content">
+          <h1 class="header__title">
+            <span class="code-symbol">&lt;</span>Портфолио<span class="code-symbol">/&gt;</span>
+          </h1>
+          <nav class="header__nav">
+            <a href="#about" class="header__link">Обо_мне</a>
+            <a href="#skills" class="header__link">Навыки</a>
+            <a href="#projects" class="header__link">Проекты</a>
+            <a href="#contacts" class="header__link">Контакты</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="wrapper">
+          <div class="hero__content">
+            <div class="hero__text">
+              <p class="hero__greeting">Привет, меня зовут</p>
+              <h2 class="hero__name">
+                <span class="code-symbol">const</span> developer = <span class="code-string">'Владимир Фёдоров'</span>;
+              </h2>
+              <p class="hero__title">Frontend Developer</p>
+              <p class="hero__description">
+                Создаю современные и интерактивные веб-приложения с использованием 
+                HTML, CSS, JavaScript и современных фреймворков.
+              </p>
+              <div class="hero__buttons">
+                <a href="#projects" class="btn btn--primary">Мои проекты</a>
+                <a href="#contacts" class="btn btn--secondary">Связаться</a>
+              </div>
+            </div>
+            <div class="hero__code">
+              <div class="code-block">
+                <div class="code-block__header">
+                  <span class="code-block__dot"></span>
+                  <span class="code-block__dot"></span>
+                  <span class="code-block__dot"></span>
+                </div>
+                <pre class="code-block__content"><code><span class="code-keyword">const</span> <span class="code-variable">developer</span> = {
+  <span class="code-property">name</span>: <span class="code-string">'Владимир Фёдоров'</span>,
+  <span class="code-property">role</span>: <span class="code-string">'Frontend Developer'</span>,
+  <span class="code-property">skills</span>: [
+    <span class="code-string">'HTML5'</span>,
+    <span class="code-string">'CSS3'</span>,
+    <span class="code-string">'JavaScript'</span>,
+    <span class="code-string">'React'</span>,
+    <span class="code-string">'Vue.js'</span>
+  ],
+  <span class="code-property">experience</span>: <span class="code-number">3</span>+ <span class="code-string">'лет'</span>
+};</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="about">
+        <div class="wrapper">
+          <h2 class="section-title">
+            <span class="code-symbol">#</span> Обо_мне
+          </h2>
+          <div class="about__content">
+            <div class="about__text">
+              <p>
+                Я фронтенд-разработчик с опытом создания современных веб-приложений. 
+                Специализируюсь на создании интуитивных пользовательских интерфейсов 
+                и обеспечении отличного пользовательского опыта.
+              </p>
+              <p>
+                Постоянно изучаю новые технологии и слежу за трендами в веб-разработке. 
+                Люблю решать сложные задачи и создавать качественный код.
+              </p>
+              <div class="about__stats">
+                <div class="stat">
+                  <div class="stat__number">50+</div>
+                  <div class="stat__label">Проектов</div>
+                </div>
+                <div class="stat">
+                  <div class="stat__number">3+</div>
+                  <div class="stat__label">Лет опыта</div>
+                </div>
+                <div class="stat">
+                  <div class="stat__number">100%</div>
+                  <div class="stat__label">Качество</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="skills">
+        <div class="wrapper">
+          <h2 class="section-title">
+            <span class="code-symbol">#</span> Навыки
+          </h2>
+          <div class="skills__grid">
+            <div class="skill-card">
+              <div class="skill-card__icon">HTML</div>
+              <h3 class="skill-card__title">HTML5</h3>
+              <p class="skill-card__description">
+                Семантическая разметка, БЭМ-методология, доступность
+              </p>
+            </div>
+            <div class="skill-card">
+              <div class="skill-card__icon">CSS</div>
+              <h3 class="skill-card__title">CSS3</h3>
+              <p class="skill-card__description">
+                Flexbox, Grid, анимации, адаптивный дизайн, SCSS/SASS
+              </p>
+            </div>
+            <div class="skill-card">
+              <div class="skill-card__icon">JS</div>
+              <h3 class="skill-card__title">JavaScript</h3>
+              <p class="skill-card__description">
+                ES6+, асинхронное программирование, DOM API
+              </p>
+            </div>
+            <div class="skill-card">
+              <div class="skill-card__icon">⚛️</div>
+              <h3 class="skill-card__title">React</h3>
+              <p class="skill-card__description">
+                Hooks, Context API, Redux, Next.js
+              </p>
+            </div>
+            <div class="skill-card">
+              <div class="skill-card__icon">Vue</div>
+              <h3 class="skill-card__title">Vue.js</h3>
+              <p class="skill-card__description">
+                Vue 3, Composition API, Vuex, Nuxt.js
+              </p>
+            </div>
+            <div class="skill-card">
+              <div class="skill-card__icon">⚡</div>
+              <h3 class="skill-card__title">Инструменты</h3>
+              <p class="skill-card__description">
+                Git, Webpack, Vite, Figma, TypeScript
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="projects">
+        <div class="wrapper">
+          <h2 class="section-title">
+            <span class="code-symbol">#</span> Проекты
+          </h2>
+          <div class="projects__grid">
+            <div class="project-card">
+              <div class="project-card__image">
+                <div class="project-card__overlay">
+                  <a href="#" class="project-card__link" target="_blank">Посмотреть</a>
+                  <a href="#" class="project-card__link" target="_blank">Код</a>
+                </div>
+              </div>
+              <div class="project-card__content">
+                <h3 class="project-card__title">E-commerce платформа</h3>
+                <p class="project-card__description">
+                  Современный интернет-магазин с корзиной, фильтрами и интеграцией платежей
+                </p>
+                <div class="project-card__tags">
+                  <span class="tag">React</span>
+                  <span class="tag">TypeScript</span>
+                  <span class="tag">Redux</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-card">
+              <div class="project-card__image">
+                <div class="project-card__overlay">
+                  <a href="#" class="project-card__link" target="_blank">Посмотреть</a>
+                  <a href="#" class="project-card__link" target="_blank">Код</a>
+                </div>
+              </div>
+              <div class="project-card__content">
+                <h3 class="project-card__title">Dashboard аналитики</h3>
+                <p class="project-card__description">
+                  Интерактивная панель управления с графиками и статистикой в реальном времени
+                </p>
+                <div class="project-card__tags">
+                  <span class="tag">Vue.js</span>
+                  <span class="tag">Chart.js</span>
+                  <span class="tag">API</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-card">
+              <div class="project-card__image">
+                <div class="project-card__overlay">
+                  <a href="#" class="project-card__link" target="_blank">Посмотреть</a>
+                  <a href="#" class="project-card__link" target="_blank">Код</a>
+                </div>
+              </div>
+              <div class="project-card__content">
+                <h3 class="project-card__title">Социальная сеть</h3>
+                <p class="project-card__description">
+                  Платформа для общения с лентой новостей, чатами и профилями пользователей
+                </p>
+                <div class="project-card__tags">
+                  <span class="tag">React</span>
+                  <span class="tag">Firebase</span>
+                  <span class="tag">SCSS</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-card">
+              <div class="project-card__image">
+                <div class="project-card__overlay">
+                  <a href="#" class="project-card__link" target="_blank">Посмотреть</a>
+                  <a href="#" class="project-card__link" target="_blank">Код</a>
+                </div>
+              </div>
+              <div class="project-card__content">
+                <h3 class="project-card__title">Погодное приложение</h3>
+                <p class="project-card__description">
+                  Приложение для просмотра погоды с прогнозами и красивой визуализацией
+                </p>
+                <div class="project-card__tags">
+                  <span class="tag">JavaScript</span>
+                  <span class="tag">API</span>
+                  <span class="tag">CSS3</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contacts" class="contacts">
+        <div class="wrapper">
+          <h2 class="section-title">
+            <span class="code-symbol">#</span> Контакты
+          </h2>
+          <div class="contacts__content">
+            <p class="contacts__text">
+              Готов к новым проектам и интересным задачам. 
+              Свяжитесь со мной, если хотите обсудить сотрудничество.
+            </p>
+            <div class="contacts__links">
+              <a href="mailto:example@email.com" class="contact-link">
+                <span class="contact-link__icon">✉️</span>
+                <span class="contact-link__text">Email</span>
+              </a>
+              <a href="https://github.com" target="_blank" class="contact-link">
+                <span class="contact-link__icon">💻</span>
+                <span class="contact-link__text">GitHub</span>
+              </a>
+              <a href="https://telegram.org" target="_blank" class="contact-link">
+                <span class="contact-link__icon">📱</span>
+                <span class="contact-link__text">Telegram</span>
+              </a>
+              <a href="https://linkedin.com" target="_blank" class="contact-link">
+                <span class="contact-link__icon">💼</span>
+                <span class="contact-link__text">LinkedIn</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrapper">
+        <div class="footer__content">
+          <p class="footer__text">
+            © 2024 Владимир Фёдоров. Создано с <span class="footer__heart">❤️</span>
+          </p>
+        </div>
+      </div>
+    </footer>
+
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

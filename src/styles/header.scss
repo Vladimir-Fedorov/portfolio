@@ -1,0 +1,71 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(48, 47, 43, 0.9);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid $border-color;
+  padding: $spacing-md 0;
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: $spacing-lg;
+  }
+
+  &__title {
+    font-size: 28px;
+    font-weight: 700;
+    color: $text-primary;
+    white-space: nowrap;
+
+    @media (max-width: $mobile) {
+      font-size: 20px;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    gap: $spacing-md;
+    flex-wrap: wrap;
+
+    @media (max-width: $mobile) {
+      gap: $spacing-sm;
+    }
+  }
+
+  &__link {
+    padding: 8px 16px;
+    font-size: 16px;
+    color: $text-secondary;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 2px;
+      background: $accent;
+      transition: width 0.3s ease;
+    }
+
+    &:hover {
+      color: $accent;
+
+      &::after {
+        width: 80%;
+      }
+    }
+
+    @media (max-width: $mobile) {
+      font-size: 14px;
+      padding: 6px 12px;
+    }
+  }
+}
